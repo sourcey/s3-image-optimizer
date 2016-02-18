@@ -1,0 +1,28 @@
+{
+  "name": "s3-image-optimizer",
+  "version": "0.1.0",
+  "description": "Optimise images on S3",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sourcey/s3-image-optimizer.git"
+  },
+  "license": "MIT",
+  "author": "Kam Low <auscaster@gmail.com> (http://sourcey.com/)",
+  "scripts": {
+    "deploy": "node-lambda deploy"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "dotenv": "^1.2.0",
+    "imagemin": "^3.2.0",
+    "imagemin-gifsicle": "^4.0.0",
+    "imagemin-jpegtran": "^4.0.0",
+    "imagemin-optipng": "^4.3.0",
+    "imagemin-svgo": "^4.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "node-lambda": "^0.7.1"
+  }
+}
