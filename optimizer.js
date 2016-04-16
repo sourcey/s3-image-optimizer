@@ -170,7 +170,7 @@ function processNext() {
   }
 
   // Process the next key in the queue
-  key = keys.pop();
+  key = keys.shift();
   // numTasks++;
   processOne(key, function() {
     // numTasks--;
