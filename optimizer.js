@@ -114,6 +114,7 @@ function processOne(key, callback) {
   ], function(err) {
     if (err === 'skip') {
       fs.appendFileSync(skippedLog, key + '\n'); // add to skipped files log
+      updateMarkerFile(key);
       err = null;
     }
     callback(err);
@@ -181,8 +182,12 @@ function processNext() {
 }
 
 function onImageOptimized(key) {
-  fs.writeFileSync(markerFile, key); // update the current market
+  updateMarkerFile(key);
   fs.appendFileSync(processedLog, key + '\n'); // add to processed files log
+}
+
+function updateMarkerFile(key) {
+  fs.writeFileSync(markerFile, key); // update the current market
 }
 
 function onComplete() {
